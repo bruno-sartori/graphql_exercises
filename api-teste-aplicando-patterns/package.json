@@ -1,0 +1,23 @@
+{
+    "name": "api-teste-aplicando-patterns",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "prod": "node build/index.js",
+        "prebuild": "del build/",
+        "build": "tsc",
+        "postbuild": "cpy '**/*' '!**/*.ts' ../build/ --cwd=src/ --no-overwrite --parents"
+    },
+    "devDependencies": {
+        "cpy-cli": "^2.0.0",
+        "del-cli": "^3.0.0"
+    },
+    "dependencies": {
+        "graphql": "^15.0.0",
+        "graphql-yoga": "^1.18.3",
+        "knex": "^0.20.13",
+        "mysql": "^2.18.1",
+        "ws": "^7.2.3"
+    }
+}
