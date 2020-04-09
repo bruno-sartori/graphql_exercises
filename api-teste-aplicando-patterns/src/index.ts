@@ -1,12 +1,13 @@
 import { GraphQLServer } from 'graphql-yoga';
 import express from 'express';
-import path from 'path';
-import resolvers from './resolvers';
 import db from './database';
 import routes from './routes';
+import schemas from './graphql/schemas';
+import resolvers from './graphql/resolvers';
 
+console.log(schemas);
 const server = new GraphQLServer({
-    typeDefs: path.resolve(__dirname, './graphql/schema.graphql'),
+    typeDefs: schemas,
     resolvers,
     context: {
         db

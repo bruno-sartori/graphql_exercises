@@ -1,0 +1,26 @@
+type Cliente {
+    id: ID!
+    tipoPessoa: String
+    nomeFantasia: String
+    dataNascimento: String
+    tipoPagamento: String
+    tipoGeracaoBoleto: String
+    loginCentral: String
+    obs: String
+    status: String
+    blackList: Int
+    createdAt: String
+    updatedAt: String
+    enderecosFkCobranca: Int
+    grupoClientesFk: Int
+    diasPagamentoPlanoFk: Int
+}
+
+extend type Query {
+    cliente(id: ID!): Cliente
+    clientes: [Cliente!]!
+}
+
+extend type Mutation {
+    createCliente(params: Cliente): Cliente
+}

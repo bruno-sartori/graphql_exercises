@@ -152,6 +152,7 @@ var DepartamentoRepository = /** @class */ (function () {
                         if (typeof status !== 'undefined' && status !== null) {
                             queryBuilder.update('status', status);
                         }
+                        queryBuilder.update('updatedAt', new Date());
                     })
                         .then(function (updatedRows) {
                         if (updatedRows.length === 0) {

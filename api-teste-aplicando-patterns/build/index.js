@@ -5,12 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var graphql_yoga_1 = require("graphql-yoga");
 var express_1 = __importDefault(require("express"));
-var path_1 = __importDefault(require("path"));
-var resolvers_1 = __importDefault(require("./resolvers"));
 var database_1 = __importDefault(require("./database"));
 var routes_1 = __importDefault(require("./routes"));
+var schemas_1 = __importDefault(require("./graphql/schemas"));
+var resolvers_1 = __importDefault(require("./graphql/resolvers"));
+console.log(schemas_1.default);
 var server = new graphql_yoga_1.GraphQLServer({
-    typeDefs: path_1.default.resolve(__dirname, './graphql/schema.graphql'),
+    typeDefs: schemas_1.default,
     resolvers: resolvers_1.default,
     context: {
         db: database_1.default

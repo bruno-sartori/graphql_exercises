@@ -127,7 +127,7 @@ var DepartamentoController = /** @class */ (function () {
                         return [4 /*yield*/, departamentoRepository.create(departamento)];
                     case 1:
                         response = _a.sent();
-                        res.send({ "success": "success", "insertedId": response });
+                        res.send({ "success": "success", "inserted": response });
                         return [3 /*break*/, 3];
                     case 2:
                         e_4 = _a.sent();
